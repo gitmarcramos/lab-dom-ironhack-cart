@@ -14,10 +14,21 @@ function updateSubtotal(product) {
 function calculateAll() {
   // ITERATION 2
   const multipleProducts = document.querySelectorAll('.product');
-  multipleProducts.forEach((product) => updateSubtotal(product));
-  
+  multipleProducts.forEach((product) => {
+    updateSubtotal(product);
+  });
+
   // ITERATION 3
-  //... your code goes here
+  //===> monkey solution:
+  let total = 0;
+
+  const allSubtotals = document.querySelectorAll('.subtotal span');
+  allSubtotals.forEach((subtotal) => {
+    total += Number(subtotal.textContent);
+  });
+
+  const totalPrice = document.querySelector('#total-value span');
+  totalPrice.textContent = total;
 }
 
 // ITERATION 4
