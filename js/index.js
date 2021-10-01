@@ -36,13 +36,11 @@ function calculateAll() {
 // ITERATION 4
 
 const btnRemove = document.querySelectorAll('.btn-remove');
-const product = document.querySelector('.product');
 
 btnRemove.forEach((btn) => {
-  // const toRmeove = document.querySelector('product').removeChild(target);
-
   btn.addEventListener('click', (e) => {
-    e.currentTarget.parentElement.parentElement.remove()
+    e.currentTarget.parentElement.parentElement.remove();
+    calculateAll()
   });
 });
 
